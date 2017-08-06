@@ -8,7 +8,7 @@ The game is entirely made with HTML5 / CSS3 / JS, relying on DOM elments and CSS
 It is also built on mobile-first responsive design and should work pretty much everywhere.
 On desktop, you can use arrows keys to play.
 
-2015, Matteo Cargnelutti (mail@elseif.eu)
+2015, Matteo Cargnelutti 
 
 You are free to use the source code as you wish, not the assets.
 Libs have their own licenses.
