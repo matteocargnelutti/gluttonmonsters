@@ -1,0 +1,583 @@
+/**
+ * Glutton Monsters
+ *
+ * 2015 - Matteo Cargnelutti
+ * See http://github.com/matteocargnelutti
+ *
+ *
+ * RESPONSE.CSS - RESPONSE
+*/
+
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE < 320x480 : 256x384 (Scale*0.8) */
+
+@media (max-width: 330px) {
+
+    /* MONSTERS */
+    .monster {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* PLAYABLE AREA */
+    .playable-container {
+        width: 256px;
+        height: 384px;
+        
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    /* MENU */
+    .menu-area .title {    
+        margin-top: 16px;
+    }
+    
+    .menu-area .title h1 {
+        font-size: 36px;
+        line-height: 28px;
+        
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    
+    .menu-area .monster {
+        position: absolute;
+        top: 124px;
+        left: 67px;
+    }
+    
+    .menu-area .switches .switch {
+        margin-bottom: 8px;
+        margin-left: 12px;
+        margin-right: 54x;
+        padding: 8px;
+        font-size: 18px;
+    }
+    
+    /* FIGHT AREA */
+    .fight-area .area.top {
+        height: 96px;
+    }
+    
+    .fight-area .area.top .monster {
+        left: 68px;
+    }
+    
+    .fight-area .area.bottom {
+        height: 96px;
+    }
+    
+    .fight-area .area.bottom .monster {
+        left: 68px;
+    }
+    
+    .fight-area .area.left {
+        height: 192px;
+    }
+    
+    .fight-area .area.left .monster {
+        top: 60px;
+    }
+        
+    .fight-area .area.right {
+        height: 192px;
+    }
+    
+    .fight-area .area.right .monster {
+        top: 60px;
+    }
+    
+    /* LAUNCH */
+    .fight-area .launch {
+        height: 96px;
+        
+        top: 132px;
+        left: 36px;
+        
+        line-height: 96px;
+    }
+    
+    .fight-area .launch .step1 {
+        font-size: 14px;
+    }
+    
+    .fight-area .launch .step2 {
+        font-size: 36px;
+    }
+    
+    /* SCORE */
+    .fight-area .score {
+        height: 96px;
+
+        top: 144px;
+        left: 64px;
+        
+        line-height: 96px;
+        
+        font-size: 80px;
+    }
+    
+    
+    /* GAME OVER */
+    .gameover-area h1 {
+        margin-top: 32px;
+        font-size: 40px;
+    }
+    
+    .gameover-area .cause {
+        margin-top: 16px;
+        font-size: 24px;
+    }
+    
+    .gameover-area .result {
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        font-size: 28px;
+    }
+    
+    .gameover-area .switch {
+        margin-bottom: 12px;
+        padding: 8px;
+
+        font-size: 20px;
+    }
+    
+    /* CREDITS */
+    .credits-area h1 {
+        margin-top: 32px;
+        font-size: 40px;
+    }
+    
+    .credits-area .text {
+        margin-top: 16px;
+        margin-bottom: 24px;
+
+        font-size: 20px;
+    }
+    
+    .credits-area .switch {
+        margin-bottom: 12px;
+        padding: 8px;
+        
+        font-size: 20px;
+    }
+
+}
+
+/* END - DEVICE < 320x480 : 256x384 (Scale*0.8) */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE > 480x720 : 480x720 (Scale*1.5) */
+
+@media (min-width: 490px) and (min-height: 730px) {
+
+    /* MONSTERS */
+    .monster {
+        width: 225px;
+        height: 225px;
+    }
+    
+    /* PLAYABLE AREA */
+    .playable-container {
+        width: 480px;
+        height: 720px;
+        
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    /* MENU */
+    .menu-area .title {    
+        margin-top: 30px;
+    }
+    
+    .menu-area .title h1 {
+        font-size: 63px;
+        line-height: 54px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .menu-area .monster {
+        top: 245px;
+        left: 126px;
+    }
+    
+    .menu-area .switches .switch {
+        margin-bottom: 15px;
+        margin-left: 22px;
+        margin-right: 7px;
+        padding: 15px;
+        text-align: center;
+        
+        border-radius: 20px;
+        
+        font-size: 34px;
+    }
+    
+    /* FIGHT AREA */
+    .fight-area .area.top {
+        height: 180px;
+    }
+    
+    .fight-area .area.top .monster {
+        left: 127px;
+    }
+    
+    .fight-area .area.bottom {
+        height: 180px;
+    }
+    
+    .fight-area .area.bottom .monster {
+        left: 127px;
+    }
+    
+    .fight-area .area.left {
+        height: 360px;
+    }
+    
+    .fight-area .area.left .monster {
+        top: 10px;
+    }
+        
+    .fight-area .area.right {
+        height: 360px;
+    }
+    
+    .fight-area .area.right .monster {
+        top: 10px;
+    }
+    
+    /* LAUNCH */
+    .fight-area .launch {
+        height: 180px;
+        
+        position: absolute;
+        top: 260px;
+        left: 67px;
+        
+        line-height: 180px;
+    }
+    
+    .fight-area .launch .step1 {
+        font-size: 26px;
+    }
+    
+    .fight-area .launch .step2 {
+        font-size: 69px;
+    }
+    
+    /* SCORE */
+    .fight-area .score {
+        height: 180px;
+
+        top: 270px;
+        left: 120px;
+        
+        line-height: 180px;
+        vertical-align: middle;
+        text-align: center;
+    
+        font-size: 150px;
+    }
+    
+    
+    /* GAME OVER */
+    .gameover-area h1 {
+        margin-top: 60px;
+        font-size: 75px;
+    }
+    
+    .gameover-area .cause {
+        margin-top: 30px;
+        font-size: 45px;
+    }
+    
+    .gameover-area .result {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        font-size: 52px;
+    }
+    
+    .gameover-area .switch {
+        margin-bottom: 20px;
+        padding: 15px;
+
+        font-size: 37.5px;
+    }
+    
+    /* CREDITS */
+    .credits-area h1 {
+        margin-top: 60px;
+        font-size: 75px;
+    }
+    
+    .credits-area .text {
+        margin-top: 30px;
+        margin-bottom: 45px;
+
+        font-size: 38px;
+    }
+    
+    .credits-area .switch {
+        margin-bottom: 22px;
+        padding: 15px;
+        
+        font-size: 36px;
+    }
+
+}
+
+/* END - DEVICE > 480x720 : 480x720 (Scale*1.5) */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE > 640x960 : 480x960 (Scale*2) */
+
+@media (min-width: 650px) and (min-height: 970px) {
+
+    /* MONSTERS */
+    .monster {
+        width: 300px;
+        height: 300px;
+    }
+    
+    /* PLAYABLE AREA */
+    .playable-container {
+        width: 640px;
+        height: 960px;
+        
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    /* MENU */
+    .menu-area .title {    
+        margin-top: 40px;
+    }
+    
+    .menu-area .title h1 {
+        font-size: 88px;
+        line-height: 71px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .menu-area .monster {
+        top: 320px;
+        left: 167px;
+    }
+    
+    .menu-area .switches .switch {
+        margin-bottom: 20px;
+        margin-left: 29px;
+        margin-right: 9px;
+        padding: 19px;
+        text-align: center;
+        
+        border-radius: 20px;
+        
+        font-size: 45px;
+    }
+    
+    /* FIGHT AREA */
+    .fight-area .area.top {
+        height: 240px;
+    }
+    
+    .fight-area .area.top .monster {
+        left: 168px;
+        top: -500px;
+    }
+    
+    @keyframes top-monster-animation-show {
+        0% { transform: translate(0px,0px) }
+        100% { transform: translate(0px,450px) }
+    }
+    
+    @-webkit-keyframes top-monster-animation-show {
+        0% { -webkit-transform: translate(0px,0px) }
+        100% { -webkit-transform: translate(0px,450px) }
+    }
+    
+    .fight-area .area.bottom {
+        height: 240px;
+    }
+    
+    .fight-area .area.bottom .monster {
+        left: 168px;
+        bottom: -500px;
+    }
+    
+    @keyframes bottom-monster-animation-show {
+        0% { transform: translate(0px,0px) }
+        100% { transform: translate(0px,-450px) }
+    }
+    
+    @-webkit-keyframes bottom-monster-animation-show {
+        0% { -webkit-transform: translate(0px,0px) }
+        100% { -webkit-transform: translate(0px,-450px) }
+    }
+    
+    .fight-area .area.left {
+        height: 480px;
+    }
+    
+    .fight-area .area.left .monster {
+        top: -20px;
+        left: -500px;
+    }
+    
+    @keyframes left-monster-animation-show {
+        0% { transform: translate(0px,0px) }
+        100% { transform: translate(450px,0px) }
+    }
+    
+    @-webkit-keyframes left-monster-animation-show {
+        0% { -webkit-transform: translate(0px,0px) }
+        100% { -webkit-transform: translate(450px,0px) }
+    }
+        
+    .fight-area .area.right {
+        height: 480px;
+    }
+    
+    .fight-area .area.right .monster {
+        top: -20px;
+        right: -500px
+    }
+    
+    @keyframes right-monster-animation-show {
+        0% { transform: translate(0px,0px) }
+        100% { transform: translate(-450px,0px) }
+    }
+    
+    @-webkit-keyframes right-monster-animation-show {
+        0% { -webkit-transform: translate(0px,0px) }
+        100% { -webkit-transform: translate(-450px,0px) }
+    }
+    
+    /* LAUNCH */
+    .fight-area .launch {
+        height: 240px;
+        
+        position: absolute;
+        top: 350px;
+        left: 89px;
+        
+        line-height: 240px;
+    }
+    
+    .fight-area .launch .step1 {
+        font-size: 34px;
+    }
+    
+    .fight-area .launch .step2 {
+        font-size: 91px;
+    }
+    
+    /* SCORE */
+    .fight-area .score {
+        height: 240px;
+
+        top: 360px;
+        left: 160px;
+        
+        line-height: 240px;
+
+        font-size: 200px;
+    }
+    
+    
+    /* GAME OVER */
+    .gameover-area h1 {
+        margin-top: 80px;
+        font-size: 100px;
+    }
+    
+    .gameover-area .cause {
+        margin-top: 40px;
+        font-size: 60px;
+    }
+    
+    .gameover-area .result {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        font-size: 70px;
+    }
+    
+    .gameover-area .switch {
+        margin-bottom: 25px;
+        padding: 20px;
+
+        font-size: 48px;
+    }
+    
+    /* CREDITS */
+    .credits-area h1 {
+        margin-top: 80px;
+        font-size: 100px;
+    }
+    
+    .credits-area .text {
+        margin-top: 40px;
+        margin-bottom: 60px;
+
+        font-size: 50px;
+    }
+    
+    .credits-area .switch {
+        margin-bottom: 30px;
+        padding: 20px;
+        
+        font-size: 48px;
+    }
+
+}
+
+/* END - DEVICE > 640x960 : 480x960 (Scale*2) */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE > 1024x */
+
+@media (min-width: 1024px) {
+
+    /* Cursor : pointer on pc */
+    .monster {
+        cursor: pointer;
+    }
+    
+    .switch {
+        cursor: pointer;
+    }
+    
+    /* Landscape alert */
+    .landscape-alert h1 {
+        margin-top: 250px;
+        font-size: 50px;
+    }
+
+}
+
+/* END - DEVICE > 1024x */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/

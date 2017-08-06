@@ -1,0 +1,239 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+<head> 
+
+	<title>Glutton Monsters</title>
+	<meta charset="UTF-8" />
+	<meta id="viewport" name="viewport" content="width=device-width,user-scalable=no,initial-scale=1" />
+	<meta name="google" value="notranslate"/>
+	
+	<!-- WEB APP CONTENT -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
+	<link rel="icon" sizes="192x192" href="img/icon192x.png" />
+	<link rel="icon" sizes="128x128" href="img/icon128x.png" />
+	<link rel="apple-touch-icon" sizes="128x128" href="img/icon192x.png">
+	<link rel="apple-touch-icon-precomposed" sizes="128x128" href="img/icon128x.png">
+	
+	<!-- FAVICON -->
+	<link rel="icon" type="image/png" href="img/icon128x.png" />
+	
+	<!-- STYLE -->
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/response.css"/>
+	
+	<!-- LIBS -->
+	<script type="text/javascript" src="libs/jquery.min.js"></script>	
+	<script type="text/javascript" src="libs/jquery.jtap.js"></script>
+	<script type="text/javascript" src="libs/howler.min.js"></script>
+	
+	<!--        -->
+	<!-- SCRIPT -->
+	<!--        -->
+	
+	<!-- GLOBALS -->
+	<script type="text/javascript">
+	// Global handler
+	var app = {}; 
+	</script>
+	
+	<!-- GENERAL -->
+	<script type="text/javascript" src="js/general/tools.js"></script>
+	<script type="text/javascript" src="js/general/resolution.js"></script>
+	<script type="text/javascript" src="js/general/bestscore.js"></script>
+	<script type="text/javascript" src="js/general/sound.js"></script>
+	
+	<!-- SCREENS -->
+	<script type="text/javascript" src="js/screens/match.js"></script>
+	<script type="text/javascript" src="js/screens/gameover.js"></script>
+	<script type="text/javascript" src="js/screens/menu.js"></script>
+	<script type="text/javascript" src="js/screens/credits.js"></script>
+	
+	<!-- TRUNK -->
+	<script type="text/javascript" src="js/game.js"></script>
+
+</head>
+
+<body>
+
+    <!--                 -->
+    <!-- LANDSCAPE ALERT -->
+    <!--                 -->
+    <div class="landscape-alert">
+    
+        <h1>Please hold your device on portrait mode.</h1>
+    
+    </div>
+    
+    <!--                    -->
+    <!-- PLAYABLE GAME PART -->
+    <!--                    -->
+    <div class="playable-container">
+    
+        <!--            -->
+        <!-- MENU AREA  -->
+        <!--            -->
+        <div class="menu-area">
+        
+            <div class="title">
+                <h1>Glutton Monsters !</h1>
+            </div>
+            
+            <!-- MONSTER -->
+            <div class="monster enemy">
+            
+                <div class="eyes">
+                    <div class="eye left"><i></i></div>
+                    <div class="eye right"><i></i></div>
+                </div>
+                
+                <div class="mouth"></div>
+            
+            </div>
+            
+            <!-- SWITCHES -->
+            <div class="switches">
+
+                <div class="switch play">Play</div>
+            
+                <div class="switch sound">Sound : On</div>
+
+                <div class="switch bestscore">Best : <span>0</span></div>
+            
+                <div class="switch credits">Credits</div>
+                
+            </div>
+        
+        </div>
+        
+        
+        
+        
+        <!--                -->
+        <!-- GAME OVER AREA -->
+        <!--                -->
+        <div class="gameover-area">
+        
+            <h1>Game Over</h1>
+        
+            <div class="cause">
+                <span class="friendlyfire">You hit the wrong monster</span>
+                <span class="timeout">You took too much time to hit</span>
+            </div>
+            
+            <div class="result">Score : <span>0</span></div>
+            
+            <div class="switch retry">Retry !</div>
+            <div class="switch quit">Quit</div>
+        
+        </div>
+        
+        
+        
+        
+        <!--               -->
+        <!-- CREDITS AREA  -->
+        <!--               -->
+        <div class="credits-area">
+        
+            <h1>Credits</h1>
+        
+            <div class="text">
+                &copy; 2015 Matteo Cargnelutti<br/>
+                Some backgrounds by <a href="http://subtlepatterns.com/" target="_blank" title="Some Backtrounds by Subtle Patterns.com">SubtlePatterns.com</a>
+            </div>
+            
+            <div class="switch quit">Close</div>
+        
+        </div>
+        
+    
+    
+    
+        <!--            -->
+        <!-- FIGHT AREA -->
+        <!--            -->
+        <div class="fight-area">
+        
+            <!-- LAUNCH -->
+            <div class="launch">
+                <span class="step1">Tap the <b>RED</b> monsters</span>
+                <span class="step2">Ready ?</span>
+            </div>
+        
+            <!-- SCORE -->
+            <div class="score">0</div>
+        
+            <!-- TOP -->
+            <div class="area top">
+            
+                <div class="monster">
+                
+                    <div class="eyes">
+                        <div class="eye left"><i></i></div>
+                        <div class="eye right"><i></i></div>
+                    </div>
+                    
+                    <div class="mouth"></div>
+                
+                </div>
+            
+            </div>
+            
+            <!-- LEFT -->
+            <div class="area left">
+            
+                <div class="monster">
+                
+                    <div class="eyes">
+                        <div class="eye left"><i></i></div>
+                        <div class="eye right"><i></i></div>
+                    </div>
+                    
+                    <div class="mouth"></div>
+                
+                </div>
+            
+            </div>
+            
+            <!-- RIGHT -->
+            <div class="area right">
+            
+                <div class="monster">
+                
+                    <div class="eyes">
+                        <div class="eye left"><i></i></div>
+                        <div class="eye right"><i></i></div>
+                    </div>
+                    
+                    <div class="mouth"></div>
+                
+                </div>
+            
+            </div>
+            
+            <!-- BOTTOM -->
+            <div class="area bottom">
+            
+                <div class="monster">
+                
+                    <div class="eyes">
+                        <div class="eye left"><i></i></div>
+                        <div class="eye right"><i></i></div>
+                    </div>
+                    
+                    <div class="mouth"></div>
+                
+                </div>
+            
+            </div>
+
+        </div>
+    
+    </div>
+        
+</body>
+
+</html>

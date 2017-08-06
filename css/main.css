@@ -1,0 +1,884 @@
+/**
+ * Glutton Monsters
+ *
+ * 2015 - Matteo Cargnelutti
+ * See http://github.com/matteocargnelutti
+ *
+ *
+ * MAIN.CSS - MAIN STYLESHEET
+*/
+
+/**
+ * Fontes
+ *
+*/
+@import url('../fonts/indieflower/stylesheet.css');
+
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* GLOBAL */
+
+html {
+    overflow: hidden;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    outline: 0px;  
+    overflow: hidden;
+    background-color: #ffbf50;
+    background-image: url('../img/border.png');
+}
+
+/* Disable highlight */
+* {
+    tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* END - GLOBAL */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* GENERIC ANIMATIONS */
+
+/* BOUNCE */
+@keyframes bounce {
+    0% { transform: translate(0px,0px); }
+    50% { transform: translate(0px,-5px); }
+    100% { transform: translate(0px,0px); }
+}
+
+@-webkit-keyframes bounce {
+    0% { -webkit-transform: translate(0px,0px); }
+    50% { -webkit-transform: translate(0px,-5px); }
+    100% { -webkit-transform: translate(0px,0px); }
+}
+
+/* END - GENERIC ANIMATIONS */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* MONSTERS */
+
+/* Generic monster */
+.monster {
+    width: 150px;
+    height: 150px;
+    
+    background-color: #de96ed;
+    border-bottom: 4px solid #896e8f;
+    border-right: 2px solid #896e8f;
+    
+    border-radius: 35%;
+    
+    position: relative;
+    
+    opacity: 1;
+}
+
+.monster .eyes {
+    height: 30%;
+    text-align: center;
+    padding-top: 30%;
+    position: relative;
+}
+
+.monster .eyes .eye {
+    display: inline-block;
+    background-color: white;
+    width: 30%;
+    height: 100%;
+    border-radius: 100%;
+    border-bottom: 2px solid #896e8f;
+    position: relative;
+}
+
+.monster .eyes .eye i {
+    display: inline-block;
+    background-color: black;
+    width: 30%;
+    height: 30%;
+    border-radius: 20px;
+    position: relative;
+    top: 30%;
+}
+
+.monster .mouth {
+    width: 75%;
+    height: 10%;
+    background-color: #281f2a;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 10%;
+    
+    -webkit-animation: monster-mouth-animation 0.3s infinite;
+    animation: monster-mouth-animation 0.3s infinite;
+}
+
+@keyframes monster-mouth-animation {
+    0% { transform: scale(1,1); }
+    50% { transform: scale(1,2); }
+    100% { transform: scale(1,1); }
+}
+
+@-webkit-keyframes monster-mouth-animation {
+    0% { -webkit-transform: scale(1,1); }
+    50% { -webkit-transform: scale(1,2); }
+    100% { -webkit-transform: scale(1,1); }
+}
+
+/* ENEMY */
+.monster.enemy {
+    background-color: #ec5f5f;
+    border-bottom: 4px solid #d94141;
+    border-right: 2px solid #d94141;
+    
+    border-radius: 18%;
+}
+
+/* FRIEND 1 */
+.monster.friend1 {
+    background-color: #5ed2ec;
+    border-bottom: 4px solid #45a6bb;
+    border-right: 2px solid #45a6bb;
+    
+    border-radius: 30%;
+}
+
+.monster.friend1 .eyes {
+    padding-top: 20%;
+}
+
+.monster.friend1 .mouth {
+    margin-top: 20%;
+}
+
+/* FRIEND 2 */
+.monster.friend2 {
+    background-color: #8dec5d;
+    border-bottom: 4px solid #64bb39;
+    border-right: 2px solid #64bb39;
+    
+    border-radius: 15%;
+}
+
+.monster.friend2 .eyes {
+    padding-top: 15%;
+}
+
+.monster.friend2 .mouth {
+    margin-top: 30%;
+}
+
+/* FRIEND 3 */
+.monster.friend3 {
+    background-color: #de96ed;
+    border-bottom: 4px solid #896e8f;
+    border-right: 2px solid #896e8f;
+}
+
+.monster.friend3 .eyes {
+}
+
+/* EMPTY */
+.monster.empty {
+    opacity: 0;
+}
+
+/* END - MONSTERS */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* PLAYABLE CONTAINER */
+
+.playable-container {
+    width: 320px;
+    height: 480px;
+    
+    position: relative;
+    
+    margin: auto;
+
+    background-color: white;
+    background-image: url('../img/background.png');
+    
+    border: 6px solid #c09446;
+    border-radius: 10px;
+    
+    overflow: hidden;
+}
+
+/* END - PLAYABLE CONTAINER */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* MENU AREA */
+
+.menu-area {
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+    
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    
+    z-index: 10;
+}
+
+.menu-area.visible {
+    -webkit-animation: menu-animation-show 0.4s forwards;
+    animation: menu-animation-show 0.4s forwards;
+}
+
+@keyframes menu-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(0px,100%) }
+}
+
+@-webkit-keyframes menu-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(0px,100%) }
+}
+
+/* Title */
+.menu-area .title {    
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+    
+    background-color: #bf50fe;
+    border-radius: 20px;
+    border-bottom: 6px solid #a337e1;
+    border-right: 4px solid #a337e1;
+    
+    text-align: center;
+    
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+.menu-area .title h1 {
+    color: white;
+    font-family: 'indieflower';
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 36px;
+    text-shadow: 1px 1px 1px black;
+    
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Monster */
+.menu-area .monster {
+    position: absolute;
+    top: 155px;
+    left: 84px;
+    
+    -webkit-animation: bounce 0.3s infinite;
+    animation: bounce 0.3s infinite;
+    
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+}
+
+.menu-area .monster * {
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;    
+}
+
+/* Switches */
+.menu-area .switches {
+    width: 100%;
+    
+    position: absolute;
+    left: 0px;
+    bottom: 5px;
+    
+    clear: both;
+}
+
+.menu-area .switches .switch {
+    width: 35%;
+    float: left;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 5px;
+    padding: 10px;
+    text-align: center;
+    
+    border-radius: 20px;
+    
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 23px;
+    text-shadow: 1px 1px 0px black;
+    
+    background-color: #ffbf50;
+    border-bottom: 6px solid #c09446;
+    border-right: 4px solid #c09446;
+    
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+.menu-area .switches .switch.play {
+    background-color: #ec5f5f;
+    border-color: #d94141;
+}
+
+.menu-area .switches .switch.sound {
+    background-color: #47d4f2;
+    border-color: #15a4c2;
+}
+
+.menu-area .switches .switch.bestscore {
+    background-color: #8ee463;
+    border-color: #52aa26;
+}
+
+.menu-area .switches .switch.credits {
+}
+
+/* MENU AREA */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* FIGHT AREA */
+
+.fight-area {
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* Trigger areas */
+.fight-area .area {
+    position: absolute;
+    z-index: 1;
+}
+
+.fight-area .area .monster {
+    position: absolute;
+    z-index: 10;
+}
+
+/* TOP */
+.fight-area .area.top {
+    width: 100%;
+    height: 120px;
+    
+    top: 0px;
+    left: 0px;
+}
+
+.fight-area .area.top .monster {
+    left: 85px;
+    top: -250px;
+}
+
+.fight-area .area.top .monster.visible {
+    /*top: -25px;*/
+    -webkit-animation: top-monster-animation-show 0.1s forwards;
+    animation: top-monster-animation-show 0.1s forwards;
+}
+
+@keyframes top-monster-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(0px,225px) }
+}
+
+@-webkit-keyframes top-monster-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(0px,225px) }
+}
+
+/* BOTTOM */
+.fight-area .area.bottom {
+    width: 100%;
+    height: 120px;
+    
+    bottom: 0px;
+    left: 0px;
+}
+
+.fight-area .area.bottom .monster {
+    left: 85px;
+    bottom: -250px;
+}
+
+.fight-area .area.bottom .monster.visible {
+    /*bottom: -25px;*/
+    -webkit-animation: bottom-monster-animation-show 0.1s forwards;
+    animation: bottom-monster-animation-show 0.1s forwards;
+}
+
+@keyframes bottom-monster-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(0px,-225px) }
+}
+
+@-webkit-keyframes bottom-monster-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(0px,-225px) }
+}
+
+/* LEFT */
+.fight-area .area.left {
+    width: 50%;
+    height: 240px;
+    
+    bottom: 120px;
+    left: 0px;
+}
+
+.fight-area .area.left .monster {
+    top: 45px;
+    left: -250px;
+}
+
+.fight-area .area.left .monster.visible {
+    /*left: -25px;*/
+    -webkit-animation: left-monster-animation-show 0.1s forwards;
+    animation: left-monster-animation-show 0.1s forwards;
+}
+
+@keyframes left-monster-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(225px,0px) }
+}
+
+@-webkit-keyframes left-monster-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(225px,0px) }
+}
+
+/* RIGHT */
+.fight-area .area.right {
+    width: 50%;
+    height: 240px;
+    
+    bottom: 120px;
+    right: 0px;
+}
+
+.fight-area .area.right .monster {
+    top: 45px;
+    right: -250px;
+}
+
+.fight-area .area.right .monster.visible {
+    /*right: -25px;*/
+    -webkit-animation: right-monster-animation-show 0.1s forwards;
+    animation: right-monster-animation-show 0.1s forwards;
+}
+
+@keyframes right-monster-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(-225px,0px) }
+}
+
+@-webkit-keyframes right-monster-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(-225px,0px) }
+}
+
+/* LAUNCH */
+.fight-area .launch {
+    width: 70%;
+    height: 120px;
+    
+    position: absolute;
+    top: 165px;
+    left: 45px;
+    
+    line-height: 120px;
+    vertical-align: middle;
+    text-align: center;
+
+    background-color: #fe5050;
+    border-radius: 20px;
+    border-bottom: 6px solid #ec4141;
+    border-right: 4px solid #ec4141;
+    
+    opacity: 0;
+}
+
+.fight-area .launch.visible {
+    -webkit-animation: launch-animation-show 0.3s forwards;
+    animation: launch-animation-show 0.3s forwards;
+}
+
+@keyframes launch-animation-show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes launch-animation-show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fight-area .launch .step1 {
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 18px;
+    text-shadow: 1px 1px 0px black;
+}
+
+.fight-area .launch .step2 {
+    display: none;
+    
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 46px;
+    text-shadow: 1px 1px 0px black;
+}
+
+
+/* SCORE */
+.fight-area .score {
+    width: 50%;
+    height: 120px;
+    
+    position: absolute;
+    top: 180px;
+    left: 80px;
+    
+    line-height: 120px;
+    vertical-align: middle;
+    text-align: center;
+
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 100px;
+    text-shadow: 1px 1px 0px black;
+
+    background-color: #bf50fe;
+    border-radius: 20px;
+    border-bottom: 6px solid #a337e1;
+    border-right: 4px solid #a337e1;
+    
+    opacity: 0;
+}
+
+.fight-area .score.visible {
+    -webkit-animation: score-animation-show 0.2s forwards;
+    animation: score-animation-show 0.2s forwards;
+}
+
+@keyframes score-animation-show {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes score-animation-show {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* END - FIGHT AREA */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* GAME OVER AREA */
+
+.gameover-area {
+    width: 100%;
+    height: 101%;
+
+    position: absolute;
+    top: -101%;
+    left: 0px;
+
+    background-color: #bf50fe;
+    background-image: url('../img/gameover.png');
+    z-index: 20;
+}
+
+.gameover-area.visible {
+    -webkit-animation: gameover-animation-show 0.4s forwards;
+    animation: gameover-animation-show 0.4s forwards;
+}
+
+@keyframes gameover-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(0px,100%) }
+}
+
+@-webkit-keyframes gameover-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(0px,100%) }
+}
+
+.gameover-area h1 {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 50px;
+    text-shadow: 1px 1px 0px black;
+    
+    text-align: center;
+}
+
+.gameover-area .cause {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    
+    text-align: center;
+
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 0px black;
+}
+
+.gameover-area .cause .friendlyfire {
+    display: none;
+}
+
+.gameover-area .result {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    text-align: center;
+    
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 35px;
+    text-shadow: 1px 1px 0px black;
+}
+
+.gameover-area .switch {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+    
+    border-radius: 20px;
+    
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 25px;
+    text-shadow: 1px 1px 0px black;
+    
+    background-color: #d8d5d0;
+    border-bottom: 6px solid #a7a39c;
+    border-right: 4px solid #a7a39c;
+    
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+    
+    transition: all ease-in-out 0.2s;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s; 
+}
+
+.gameover-area .switch.retry.enabled {
+    background-color: #ffbf50;
+    border-color: #c09446; 
+}
+
+.gameover-area .switch.quit.enabled {
+    background-color: #47d4f2;
+    border-color: #15a4c2;
+}
+
+/* END - GAME OVER AREA */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* CREDITS AREA */
+
+.credits-area {
+    width: 100%;
+    height: 101%;
+
+    position: absolute;
+    top: -101%;
+    left: 0px;
+
+    background-color: #bf50fe;
+    background-image: url('../img/gameover.png');
+    z-index: 30;
+    
+    display: block;
+    overflow: hidden;
+}
+
+.credits-area.visible {
+    -webkit-animation: credits-animation-show 0.4s forwards;
+    animation: credits-animation-show 0.4s forwards;
+}
+
+@keyframes credits-animation-show {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(0px,100%) }
+}
+
+@-webkit-keyframes credits-animation-show {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(0px,100%) }
+}
+
+.credits-area h1 {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 50px;
+    text-shadow: 1px 1px 0px black;
+    
+    text-align: center;
+}
+
+.credits-area .text {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+    text-align: center;
+
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 26px;
+    text-shadow: 1px 1px 0px black;
+}
+
+.credits-area .text a {
+    color: white;
+    text-decoration: none;
+}
+
+.credits-area .switch {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+    
+    border-radius: 20px;
+    
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 25px;
+    text-shadow: 1px 1px 0px black;
+    
+    background-color: #ffbf50;
+    border-bottom: 6px solid #c09446;
+    border-right: 4px solid #c09446;
+    
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+    
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+}
+
+.credits-area .switch.visible {
+    opacity: 1;
+}
+
+.credits-area .switch.quit {
+    background-color: #47d4f2;
+    border-color: #15a4c2;
+}
+
+/* END - CREDITS AREA */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* LANDSCAPE ALERT */
+
+.landscape-alert {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    background-color: #bf50fe;
+    background-image: url('../img/gameover.png');
+    z-index: 40;
+    
+    display: none;
+}
+
+.landscape-alert h1 {
+    margin-top: 100px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: 'indieflower',cursive;
+    font-size: 25px;
+    text-shadow: 1px 1px 0px black;
+}
+
+/* END - LANDSCAPE ALERT */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
